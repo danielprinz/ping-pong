@@ -28,7 +28,7 @@ public class TestPongVerticle {
   @Timeout(5000)
   @Test
   void pongIsReplied(Vertx vertx, VertxTestContext context) {
-    vertx.eventBus().send("ping-pong", "ping-test", reply -> {
+    vertx.eventBus().request("ping-pong", "ping-test", reply -> {
       if (reply.failed()) {
         context.failNow(reply.cause());
       } else {
