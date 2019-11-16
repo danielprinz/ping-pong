@@ -21,7 +21,7 @@ public class PingVerticle extends AbstractVerticle {
   }
 
   private void sendPing() {
-    vertx.eventBus().send("ping-pong", new JsonObject().put("msg", "ping"), ar -> {
+    vertx.eventBus().request("ping-pong", new JsonObject().put("msg", "ping"), ar -> {
       if (ar.failed()) {
         System.err.println("Did not receive a response: " + ar.cause());
         return;
