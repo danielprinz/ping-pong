@@ -5,6 +5,10 @@ import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 
+/**
+ * In Vert.x 4 the first event loop is pinned to the non Vert.x thread.
+ * https://github.com/vert-x3/wiki/wiki/4.0.0-Deprecations-and-breaking-changes#%EF%B8%8F-context-affinity-for-non-vertx-thread
+ */
 public class PingVerticle extends AbstractVerticle {
 
   @Override

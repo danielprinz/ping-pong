@@ -20,7 +20,7 @@ public class FuturesExample extends AbstractVerticle {
       System.out.println("4 - Second Timer fired");
       whenTimer2Fired.complete();
     });
-    CompositeFuture.all(whenTimer1Fired.future(), whenTimer2Fired.future()).setHandler(ar -> {
+    CompositeFuture.all(whenTimer1Fired.future(), whenTimer2Fired.future()).onComplete(ar -> {
       System.out.println("5 - Both timers fired");
       start.complete();
     });

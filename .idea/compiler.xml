@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ping-pong" target="1.8" />
+      <module name="ping-pong" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
